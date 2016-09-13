@@ -73,6 +73,21 @@ public class Operations {
         return Math.atan(displayValue);
     }
 
+    public Double factorial(double displayValue) {
+        double total = 1;
+        for(int i = 1; i<=displayValue; i++) {
+            total*=i;
+        }
+        return total;
+    }
+
+    //LOG FUNCTIONS:
+
+    public Double log(double displayValue) { return Math.log(displayValue); }
+    public Double naturalLog(double displayValue) { return Math.log10(displayValue); }
+    public Double inverseNaturalLog(double displayValue) { return Math.pow(Math.E, displayValue);}
+    public Double inverseLog(double displayValue) { return Math.log10(displayValue);}
+
 
 
 

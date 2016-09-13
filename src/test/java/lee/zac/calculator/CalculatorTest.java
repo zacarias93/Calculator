@@ -13,9 +13,12 @@ public class CalculatorTest {
 
     double delta;
     Operations operations;
+    ConvertDisplayType convertDisplayType;
     @Before
     public void setUpTest() {
         operations = new Operations();
+        convertDisplayType = new ConvertDisplayType();
+
         delta = 10^-15;
     }
 
@@ -69,13 +72,37 @@ public class CalculatorTest {
         assertEquals(expected,actual,delta);
     }
 
+    @Test
+    public void factorialTest() {
+        double expected = 120;
+        double actual = operations.factorial(5);
+        assertEquals(expected,actual,delta);
+    }
+
+    @Test
+    public void doubleToBinaryTest() {
+        String expected = "1000";
+        String actual = convertDisplayType.doubleToBinary(8);
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void doubleToOctalTest() {
+        String expected = "10";
+        String actual = convertDisplayType.doubleToOctal(8);
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void doubleToHexTest() {
+        String expected = "a";
+        String actual = convertDisplayType.doubleToHex(10);
+        assertEquals(expected,actual);
+    }
 
 
 
-
-
-
-
+//ALL THE TEST I WROTE BEFORE I CHANGED CLASSES / SET UP OF CALC
 //    @Test
 //    public void subtractTest() {
 //        Calculator calc = new Calculator();

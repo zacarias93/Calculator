@@ -29,6 +29,16 @@ public class Display {
         return userOperation.toLowerCase();
     }
 
+    public String getUserDisplayMode() {
+        String userDisplayMode = scan.nextLine();
+        return userDisplayMode.toLowerCase();
+    }
+
+    public String getUserUnitsMode() {
+        String userUnitsMode = scan.nextLine();
+        return userUnitsMode.toLowerCase();
+    }
+
     public double getUserDoubleInput() {
         System.out.print("Please enter a number: ");
         double userInput = scan.nextDouble();
@@ -41,6 +51,9 @@ public class Display {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("add, subtract, multiply, divide");
         System.out.println("square, sqrt, inverse, invert, var expo");
+        System.out.println("binary, octal, hex");
+        System.out.println("m+, mc, mrc,");
+        System.out.println("log, natural log, inverse ln, inverse log");
         System.out.println("list, change, clear, rotate, off");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println();
