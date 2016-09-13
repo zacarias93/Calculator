@@ -1,92 +1,161 @@
 package lee.zac.calculator;
 
+import org.junit.Before;
 import org.junit.Test;
+import sun.security.x509.DeltaCRLIndicatorExtension;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by zaclee on 9/11/16.
- */
+// */
 public class CalculatorTest {
 
+    double delta;
+    Operations operations;
+    @Before
+    public void setUpTest() {
+        operations = new Operations();
+        delta = 10^-15;
+    }
 
     @Test
     public void addTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = Double.valueOf(0);
-        calc.userInputDouble= Double.valueOf(5);
-        assertEquals("I want to add 0 + 5", "5.0", calc.add());
-    }
-    @Test
-    public void subtractTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = Double.valueOf(10);
-        calc.userInputDouble= Double.valueOf(5);
-        assertEquals("5.0", calc.subtract());
-    }
-    @Test
-    public void multiplyTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = Double.valueOf(10);
-        calc.userInputDouble= Double.valueOf(5);
-        assertEquals( "50.0", calc.multiply());
-    }
-    @Test
-    public void divideTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = Double.valueOf(10);
-        calc.userInputDouble= Double.valueOf(5);
-        assertEquals("2.0", calc.divide());
-    }
-    @Test
-    public void clearTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = Double.valueOf(10);
-        calc.userInputDouble= Double.valueOf(5);
-        assertEquals("0.0", calc.clear());
+        double expected = 15;
+        double actual = operations.add(10,5);
+        assertEquals(expected,actual,delta);
+
     }
 
     @Test
-    public void squareTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = 10d;
-        assertEquals("100.0", calc.square());
+    public void sinTest() {
+        double expected = 0;
+        double actual = operations.sin(0);
+        assertEquals(expected,actual,delta);
     }
 
     @Test
-    public void sqrtTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = 100d;
-        assertEquals("10.0", calc.sqrt());
+    public void cosTest() {
+        double expected = 1;
+        double actual = operations.cos(0);
+        assertEquals(expected,actual,delta);
     }
 
     @Test
-    public void inverseTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = 100d;
-        assertEquals("0.01", calc.inverse());
+    public void tanTest() {
+        double expected = 0;
+        double actual = operations.tan(0);
+        assertEquals(expected,actual,delta);
     }
 
     @Test
-    public void invertTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = 100d;
-        assertEquals("-100.0", calc.invert());
-    }
-    @Test
-    public void DoubleToBinaryTest() {
-        Calculator calc = new Calculator();
-        calc.currentValue = "16";
-        assertEquals("10000", calc.doubleToBinary());
-    }
-    @Test
-    public void varExpoTest() {
-        Calculator calc = new Calculator();
-        calc.currentValueDouble = 10d;
-        calc.userInputDouble = 2d;
-        assertEquals("100.0", calc.varExpo());
+    public void inverseCosTest() {
+        double expected = 0;
+        double actual = operations.inverseCos(0);
+        assertEquals(expected,actual,delta);
     }
 
+    @Test
+    public void inverseSinTest() {
+        double expected = 0;
+        double actual = operations.inverseSin(0);
+        assertEquals(expected,actual,delta);
+    }
+
+    @Test
+    public void inverseTanTest() {
+        double expected = 0;
+        double actual = operations.inverseTan(0);
+        assertEquals(expected,actual,delta);
+    }
+
+
+
+
+
+
+
+
+//    @Test
+//    public void subtractTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(0);
+//        calc.userInputDouble= Double.valueOf(5);
+//        assertEquals("5.0", operations.subtract());
+//    }
+//    @Test
+//    public void multiplyTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(0);
+//        calc.userInputDouble= Double.valueOf(5);
+//        assertEquals( "50.0", operations.multiply());
+//    }
+//    @Test
+//    public void divideTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(0);
+//        calc.userInputDouble= Double.valueOf(5);
+//        assertEquals("2.0", operations.divide());
+//    }
+//    @Test
+//    public void clearTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(0);
+//        calc.userInputDouble= Double.valueOf(5);
+//        assertEquals("0.0", operations.clear());
+//    }
+//
+//    @Test
+//    public void squareTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(100);
+//        assertEquals("100.0", operations.square());
+//    }
+//
+//    @Test
+//    public void sqrtTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(100);
+//        assertEquals("10.0", operations.sqrt());
+//    }
+//
+//    @Test
+//    public void inverseTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(100);
+//        assertEquals("0.01", operations.inverse());
+//    }
+//
+//    @Test
+//    public void invertTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(100);
+//        assertEquals("-100.0", operations.invert());
+//    }
+// /*   @Test
+//    public void DoubleToBinaryTest() {
+//        Calculator calc = new Calculator();
+//        calc.displayValue = "16";
+//        assertEquals("10000", calc.doubleToBinary());
+//    }
+// */
+//    @Test
+//    public void varExpoTest() {
+//        Calculator calc = new Calculator();
+//        Operations operations = new Operations();
+//        calc.displayValue = Double.valueOf(100);
+//        calc.userInputDouble = Double.valueOf(2);
+//        assertEquals("100.0", operations.varExpo());
+//    }
+//
 
 
 
