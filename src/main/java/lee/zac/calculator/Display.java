@@ -53,6 +53,7 @@ public class Display {
         System.out.println("square, sqrt, inverse, invert, var expo");
         System.out.println("binary, octal, hex");
         System.out.println("m+, mc, mrc,");
+        System.out.println("switch units, rotate units, switch display, rotate display");
         System.out.println("log, natural log, inverse ln, inverse log");
         System.out.println("list, change, clear, rotate, off");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
