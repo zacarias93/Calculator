@@ -1,5 +1,7 @@
 package lee.zac.calculator;
 
+import java.util.Objects;
+
 import static com.sun.tools.javac.util.Assert.error;
 
 /**
@@ -17,6 +19,7 @@ public class Logic {
     double displayValue;
     public String displayMode;
     public String unitsMode;
+    private String userOperation;
 
     public Logic() {
         powerOn = true;
@@ -107,6 +110,15 @@ public class Logic {
         }
     }
 
+    public void error() {
+        System.out.println("Error! Clear before continuing.");
+        while (!Objects.equals(display.getUserOperation(), "clear")) {
+            System.out.println("Please enter: clear");
+        }
+        memory.clearDisplayValue();
+    }
+
+
 
     public void delegateOperation(String userOperation) {
 
@@ -137,7 +149,7 @@ public class Logic {
             case "divide":
                 userInputValue = display.getUserDoubleInput();
                 if ( userInputValue == 0) {
-                    display.error();
+                    error();
                 } else {
                     newDisplayValue = operations.divide(memory.getDisplayValue(), userInputValue);
                     memory.setDisplayValue(newDisplayValue);

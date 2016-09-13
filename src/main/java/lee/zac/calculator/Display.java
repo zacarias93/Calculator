@@ -60,14 +60,12 @@ public class Display {
         System.out.println();
     }
 
-    public void error() {
-        System.out.println("Error! Clear before continuing.");
+
 //        Calculator.getUserInput();
 //        while(!Objects.equals(Calculator.userInput.toLowerCase(), "clear")) {
 //            error();
 //        }
 //        Calculator.displayValue =0d;
 //        Calculator.setPowerOn();
-    }
 
 }
